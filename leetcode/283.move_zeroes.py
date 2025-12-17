@@ -1,17 +1,15 @@
-def move_zeroes(nums):
-    j = 0
-    for i in range(len(nums)):
-        if nums[i]:
-            nums[j] = nums[i]
-            j += 1
-    for i in range(j, len(nums)):
-        nums[i] = 0
+from typing import List
 
-def move_zeroes_1(nums):
-    j = 0
-    for i in range(len(nums)):
-        if nums[i]:
-            if i > j:
-                nums[j] = nums[i]
-                nums[i]= 0
-            j += 1
+def move_zeros(nums: List[int]) -> List[int]:
+    slow = 0
+    
+    for fast in range(len(nums)):
+        if nums[fast] != 0:
+            # Swap the non-zero (fast) with the zero (slow)
+            nums[slow], nums[fast] = nums[fast], nums[slow]
+            slow += 1
+    return nums
+
+if __name__ == "__main__":
+     result = move_zeros([0,1,0,3,12])
+     print(result)

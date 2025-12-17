@@ -1,17 +1,10 @@
-def remove_element(nums, val):
-    j = 0
-    for i in range(len(nums)):
-        if nums[i] != val:
-            nums[j] = nums[i]
-            j += 1
-    return j, nums
+from typing import List
 
-def remove_element_01(nums, val):
-    j = 0
-    for i in range(len(nums)):
-        if nums[i] != val:
-            if i > j:
-                nums[j] = nums[i]
-            j +=1
-    return j, nums
-    
+
+def remove_element(nums: List[int], val: int) -> int:
+    slow = 0
+    for fast in range(len(nums)):
+        if nums[fast] != val:
+            nums[slow] = nums[fast]
+            slow += 1
+    return slow
