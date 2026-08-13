@@ -1,0 +1,14 @@
+# Virtual environments
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+notebooks/**/*_practice.ipynb
+
+# Python cache and generated files
+__pycache__/
+*.py[cod]
+
+# macOS
+.DS_Store
